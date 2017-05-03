@@ -1,0 +1,29 @@
+subprojects {
+  apply plugin: 'war'
+
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    providedCompile 'fish.payara.extras:payara-micro:4.1.1.171.0.1'
+  }
+}
+
+task start(type: Exec) {
+  def payaraJarPath = subprojects[0]
+                          .configurations
+                          .providedCompile
+                          .find {it.name =~ /payara-micro.*\.jar/}
+                          .absolutePath
+  
+  def nonSecureWarPath = project(':non-secure').war.archivePath
+  def secureWarPath = project(':secure').war.archivePath
+  commandLine(
+    'java', '-jar', payaraJarPath,
+      '--deploy', nonSecureWarPath,
+      '--deploy', secureWarPath
+  )
+}
+
+start.dependsOn ':non-secure:war', ':secure:war'
