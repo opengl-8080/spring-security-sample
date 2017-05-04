@@ -1,1 +1,1 @@
-include 'non-secure', 'secure'
+include 'non-secure', 'secure', 'app'
