@@ -25,7 +25,9 @@ task start(type: Exec) {
   def nonSecureWarPath = project(':non-secure').war.archivePath
   def secureWarPath = project(':secure').war.archivePath
   commandLine(
-    'java', '-jar', payaraJarPath,
+    'java',
+      '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000',
+      '-jar', payaraJarPath,
       '--deploy', nonSecureWarPath,
       '--deploy', secureWarPath
   )
