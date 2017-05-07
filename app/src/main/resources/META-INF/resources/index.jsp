@@ -14,9 +14,11 @@
         </form>
         
         <c:url var="xxss" value="/x-xss.jsp" />
+        <c:url var="csrf" value="/csrf" />
         
         <ul>
             <li>X-XSS-Protection <code>http://localhost:8080${xxss}?message=&lt;script&gt;alert('X-XSS!!')&lt;/script&gt;</code></li>
+            <li><a href="${csrf}">CSRF</a></li>
         </ul>
     </body>
 </html>
