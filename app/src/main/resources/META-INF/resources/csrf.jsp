@@ -16,6 +16,7 @@
                 <label>value : <input type="text" name="value" /></label>
             </div>
             <input type="submit" value="Submit" />
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         </form>
         
         <ul>
