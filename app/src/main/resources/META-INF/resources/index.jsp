@@ -5,11 +5,7 @@
         <title>Menu</title>
     </head>
     <body>
-        <c:url var="logoutUrl" value="/logout" />
-        <form action="${logoutUrl}" method="POST">
-            <input type="submit" value="logout" />
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
-        </form>
+        <jsp:include page="/menu.jsp" />
         
         <c:url var="xxss" value="/x-xss.jsp" />
         <c:url var="csrf" value="/csrf" />

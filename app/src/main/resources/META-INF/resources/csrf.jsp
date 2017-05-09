@@ -5,6 +5,8 @@
         <title>CSRF</title>
     </head>
     <body>
+        <jsp:include page="/menu.jsp" />
+        
         <h2>CSRF</h2>
         
         <a href="https://opengl-8080.github.io/spring-security-sample/csrf.html">攻撃を再現</a>
