@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/login.jsp");
         dispatcher.forward(req, resp);
     }
 
@@ -43,14 +43,8 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute(SESSION_USER_KEY, userMap.get(username));
             failed = false;
         }
-        
-        if (failed) {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/login.jsp");
-            req.setAttribute("errorMessage", "ユーザー名またはパスワードが異なります");
-            dispatcher.forward(req, resp);
-        } else {
-            String contextPath = req.getContextPath();
-            resp.sendRedirect(contextPath + "/");
-        }
+
+        String contextPath = req.getContextPath();
+        resp.sendRedirect(contextPath + (failed ? "/login?error" : "/"));
     }
 }

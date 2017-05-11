@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Objects;
 
 public class MyAccessDeniedHandler implements AccessDeniedHandler {
     
@@ -20,9 +21,9 @@ public class MyAccessDeniedHandler implements AccessDeniedHandler {
     private final String unauthorizedPage;
 
     public MyAccessDeniedHandler(String loginPage, String invalidAccessPage, String unauthorizedPage) {
-        this.loginPage = loginPage;
-        this.invalidAccessPage = invalidAccessPage;
-        this.unauthorizedPage = unauthorizedPage;
+        this.loginPage = Objects.requireNonNull(loginPage);
+        this.invalidAccessPage = Objects.requireNonNull(invalidAccessPage);
+        this.unauthorizedPage = Objects.requireNonNull(unauthorizedPage);
     }
 
     @Override

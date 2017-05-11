@@ -20,9 +20,8 @@ public class SecurityFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
-        String servletPath = req.getServletPath();
 
-        if ("/login".equals(servletPath)) {
+        if (this.permitAll(req)) {
             chain.doFilter(request, response);
         } else {
             HttpSession session = req.getSession(true);
@@ -36,6 +35,11 @@ public class SecurityFilter implements Filter {
                 chain.doFilter(request, response);
             }
         }
+    }
+    
+    private boolean permitAll(HttpServletRequest req) {
+        String servletPath = req.getServletPath();
+        return "/login".equals(servletPath) || servletPath.startsWith("/css");
     }
     
     @Override

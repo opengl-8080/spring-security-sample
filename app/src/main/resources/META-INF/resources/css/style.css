@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.error {
+    color: #F00;
+}
+
+.info {
+    color: #228b22;
+}
