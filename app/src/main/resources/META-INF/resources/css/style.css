@@ -7,3 +7,8 @@
 .info {
     color: #228b22;
 }
+
+pre {
+    background-color: #EEE;
+    border: 1px solid #CCC;
+}
