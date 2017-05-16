@@ -9,7 +9,7 @@
         
         <h2>Click Jacking</h2>
         
-        <%pageContext.setAttribute("contextPath", request.getContextPath());%>
+        <%pageContext.setAttribute("contextPath", request.getContextPath().replace("/", ""));%>
         <a href="https://opengl-8080.github.io/spring-security-sample/click-jacking-${contextPath}.html">攻撃を再現</a>
         
         <c:url var="clickJackingUrl" value="/click-jacking" />
