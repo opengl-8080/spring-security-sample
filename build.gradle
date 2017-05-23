@@ -32,6 +32,7 @@ task start(type: Exec) {
     'java',
       '-Xdebug', '-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000',
       '-jar', payaraJarPath,
+      '--sslport', '8443',
       '--deploy', nonSecureWarPath,
       '--deploy', secureWarPath
   )
