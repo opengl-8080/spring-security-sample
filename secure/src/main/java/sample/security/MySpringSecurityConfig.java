@@ -14,8 +14,8 @@ import org.springframework.security.web.csrf.CsrfTokenRepository;
 public class MySpringSecurityConfig extends WebSecurityConfigurerAdapter {
     
     private static final String LOGIN_PAGE = "/login";
-    private static final String INVALID_ACCESS_PAGE = "/WEB-INF/invalid-access.html";
-    private static final String UNAUTHORIZED_PAGE = "/WEB-INF/unauthorized.html";
+    private static final String INVALID_ACCESS_PAGE = "/WEB-INF/invalid-access.jsp";
+    private static final String UNAUTHORIZED_PAGE = "/WEB-INF/unauthorized.jsp";
     
     @Override
     public void configure(HttpSecurity http) throws Exception {

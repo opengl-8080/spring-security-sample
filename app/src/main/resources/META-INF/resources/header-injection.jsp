@@ -5,6 +5,11 @@
         <title>Header Injection</title>
         <c:url var="cssUrl" value="/css/style.css" />
         <link rel="stylesheet" href="${cssUrl}" />
+        <style>
+          body {
+            background-color: ${backgroundColor};
+          }
+        </style>
     </head>
     <body>
         <jsp:include page="/menu.jsp" />

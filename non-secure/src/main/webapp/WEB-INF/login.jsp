@@ -5,6 +5,11 @@
         <title>Non-Secure Login</title>
         <c:url var="cssUrl" value="/css/style.css" />
         <link rel="stylesheet" href="${cssUrl}" />
+        <style>
+          body {
+            background-color: ${backgroundColor};
+          }
+        </style>
     </head>
     <body>
         <c:if test="${param.containsKey('error')}">

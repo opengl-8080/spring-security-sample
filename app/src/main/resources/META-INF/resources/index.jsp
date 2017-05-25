@@ -3,6 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <title>Menu</title>
+        <style>
+          body {
+            background-color: ${backgroundColor};
+          }
+        </style>
     </head>
     <body>
         <jsp:include page="/menu.jsp" />
