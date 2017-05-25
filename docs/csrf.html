@@ -10,14 +10,14 @@
         </style>
     </head>
     <body>
-        <h2>http://localhost:8080/non-secure/csrf</h2>
-        <form action="http://localhost:8080/non-secure/csrf" method="POST">
+        <h2>https://localhost:8443/non-secure/csrf</h2>
+        <form action="https://localhost:8443/non-secure/csrf" method="POST">
             <input type="text" name="value" value="CSRF Attack!" />
             <input type="submit" value="Submit" />
         </form>
         
-        <h2>http://localhost:8080/secure/csrf</h2>
-        <form action="http://localhost:8080/secure/csrf" method="POST">
+        <h2>https://localhost:8443/secure/csrf</h2>
+        <form action="https://localhost:8443/secure/csrf" method="POST">
             <input type="text" name="value" value="CSRF Attack!" />
             <input type="submit" value="Submit" />
         </form>
