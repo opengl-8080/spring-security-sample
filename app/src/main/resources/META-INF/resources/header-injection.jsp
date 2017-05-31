@@ -3,13 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Header Injection</title>
-        <c:url var="cssUrl" value="/css/style.css" />
-        <link rel="stylesheet" href="${cssUrl}" />
-        <style>
-          body {
-            background-color: ${backgroundColor};
-          }
-        </style>
+        <jsp:include page="/style.jsp" />
     </head>
     <body>
         <jsp:include page="/menu.jsp" />

@@ -3,13 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Secure Login</title>
-        <c:url var="cssUrl" value="/css/style.css" />
-        <link rel="stylesheet" href="${cssUrl}" />
-        <style>
-          body {
-            background-color: ${backgroundColor};
-          }
-        </style>
+        <jsp:include page="/style.jsp" />
     </head>
     <body>
         <c:if test="${param.containsKey('error')}">
