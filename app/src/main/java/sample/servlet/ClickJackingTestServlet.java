@@ -24,7 +24,6 @@ public class ClickJackingTestServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.counter.increment();
-        String contextPath = req.getContextPath();
-        resp.sendRedirect(contextPath + "/click-jacking");
+        resp.sendRedirect(req.getContextPath() + "/click-jacking");
     }
 }

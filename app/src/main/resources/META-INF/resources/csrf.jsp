@@ -21,7 +21,7 @@
         </form>
         
         <ul>
-            <c:forEach var="value" items="${values}">
+            <c:forEach var="value" items="${values.get()}">
                 <li>${value}</li>
             </c:forEach>
         </ul>

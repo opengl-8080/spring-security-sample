@@ -20,35 +20,33 @@ public class SecurityFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest req = (HttpServletRequest) request;
-
-        if (this.permitAll(req)) {
-            chain.doFilter(request, response);
-        } else {
-            HttpSession session = req.getSession(true);
-            Object loginUser = session.getAttribute(LoginServlet.SESSION_USER_KEY);
-
-            if (loginUser == null) {
-                HttpServletResponse resp = (HttpServletResponse) response;
-                String contextPath = req.getContextPath();
-                resp.sendRedirect(contextPath + "/login");
-            } else {
-                chain.doFilter(request, response);
-            }
-        }
-    }
-    
-    private boolean permitAll(HttpServletRequest req) {
-        String servletPath = req.getServletPath();
-        return "/login".equals(servletPath) || servletPath.startsWith("/css");
-    }
-    
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
         
+        if (this.satisfiesToReject(req)) {
+            this.redirectToLoginPage(req, (HttpServletResponse) response);
+            return;
+        }
+        
+        chain.doFilter(request, response);
     }
-
-    @Override
-    public void destroy() {
-
+    
+    private boolean satisfiesToReject(HttpServletRequest request) {
+        return !this.permitsRequestedPath(request) && !this.isLoggedIn(request);
     }
+    
+    private boolean permitsRequestedPath(HttpServletRequest request) {
+        String servletPath = request.getServletPath();
+        return LoginServlet.LOGIN_PATH.equals(servletPath) || servletPath.startsWith("/css");
+    }
+    
+    private boolean isLoggedIn(HttpServletRequest request) {
+        HttpSession session = request.getSession(true);
+        return session.getAttribute(LoginServlet.SESSION_USER_KEY) != null;
+    }
+    
+    private void redirectToLoginPage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.sendRedirect(request.getContextPath() + LoginServlet.LOGIN_PATH);
+    }
+    
+    @Override public void init(FilterConfig filterConfig) throws ServletException {}
+    @Override public void destroy() {}
 }
