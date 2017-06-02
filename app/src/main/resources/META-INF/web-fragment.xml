@@ -10,7 +10,7 @@
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>
             <page-encoding>UTF-8</page-encoding>
-            <include-prelude>/prelude.jsp</include-prelude>
+            <include-prelude>/WEB-INF/prelude.jsp</include-prelude>
         </jsp-property-group>
     </jsp-config>
 </web-fragment>

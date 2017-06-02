@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet {
     public static final String LOGIN_PATH = "/login";
     public static final String SESSION_USER_KEY = "loginUser";
     
-    private static final String LOGIN_SUCCESS_PATH = "/";
+    private static final String LOGIN_SUCCESS_PATH = "/home";
     private static final String LOGIN_FAILURE_PATH = LOGIN_PATH + "?error";
     
     @Inject

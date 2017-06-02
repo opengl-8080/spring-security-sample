@@ -17,7 +17,7 @@ public class ClickJackingTestServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/click-jacking.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/click-jacking.jsp");
         dispatcher.forward(req, resp);
     }
 

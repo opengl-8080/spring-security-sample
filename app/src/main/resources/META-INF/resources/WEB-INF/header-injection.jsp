@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <title>Header Injection</title>
-        <jsp:include page="/style.jsp" />
+        <jsp:include page="/WEB-INF/style.jsp" />
     </head>
     <body>
-        <jsp:include page="/menu.jsp" />
+        <jsp:include page="/WEB-INF/menu.jsp" />
         
         <h2>Header Injection</h2>
         

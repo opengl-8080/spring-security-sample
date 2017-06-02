@@ -25,6 +25,6 @@ public class HeaderInjectionTestServlet extends HttpServlet {
     }
     
     private void forward(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/header-injection.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/header-injection.jsp").forward(req, resp);
     }
 }

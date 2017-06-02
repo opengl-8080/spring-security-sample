@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>Non-Secure Login</title>
-        <jsp:include page="/style.jsp" />
+        <title>Secure Login</title>
+        <jsp:include page="/WEB-INF/style.jsp" />
     </head>
     <body>
         <c:if test="${param.containsKey('error')}">
@@ -14,7 +14,6 @@
         </c:if>
         
         <c:url var="loginUrl" value="/login" />
-        
         <form action="${loginUrl}" method="POST">
           <div>
             <label>Username : <input type="text" name="username" autofocus /></label>
@@ -23,6 +22,8 @@
             <label>Password : <input type="password" name="password" /></label>
           </div>
           <input type="submit" value="Login" />
+          
+          <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         </form>
     </body>
 </html>

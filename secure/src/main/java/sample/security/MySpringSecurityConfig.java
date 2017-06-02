@@ -14,6 +14,7 @@ import org.springframework.security.web.csrf.CsrfTokenRepository;
 public class MySpringSecurityConfig extends WebSecurityConfigurerAdapter {
     
     private static final String LOGIN_PAGE = "/login";
+    private static final String DEFAULT_SUCCESS_PATH = "/home";
     private static final String INVALID_ACCESS_PAGE = "/WEB-INF/invalid-access.jsp";
     private static final String UNAUTHORIZED_PAGE = "/WEB-INF/unauthorized.jsp";
     
@@ -26,6 +27,7 @@ public class MySpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .formLogin()
                 .loginPage(LOGIN_PAGE)
+                .defaultSuccessUrl(DEFAULT_SUCCESS_PATH, true)
                 .and()
             .exceptionHandling()
                 .accessDeniedHandler(this.accessDeniedHandler())

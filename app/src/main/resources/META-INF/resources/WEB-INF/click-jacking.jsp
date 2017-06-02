@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <title>Click Jacking</title>
-        <jsp:include page="/style.jsp" />
+        <jsp:include page="/WEB-INF/style.jsp" />
     </head>
     <body>
-        <jsp:include page="/menu.jsp" />
+        <jsp:include page="/WEB-INF/menu.jsp" />
         
         <h2>Click Jacking</h2>
         
