@@ -15,14 +15,18 @@
         <c:url var="csrfUrl" value="/csrf" />
         
         <form action="${csrfUrl}" method="POST">
-            <label>value : <input type="text" name="value" /></label>
-            <input type="submit" value="Submit" />
+            <div class="form-item">
+                <label for="value">Value</label>
+                <input type="text" id="value" name="value" />
+                <input type="submit" value="Add" />
+            </div>
+            
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         </form>
         
         <ul>
             <c:forEach var="value" items="${values.get()}">
-                <li>${value}</li>
+                <li class="list-item">${value}</li>
             </c:forEach>
         </ul>
     </body>

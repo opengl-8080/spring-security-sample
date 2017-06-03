@@ -15,12 +15,16 @@
         
         <c:url var="loginUrl" value="/login" />
         <form action="${loginUrl}" method="POST">
-          <div>
-            <label>Username : <input type="text" name="username" autofocus /></label>
+          <div class="form-item">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" autofocus />
           </div>
-          <div>
-            <label>Password : <input type="password" name="password" /></label>
+
+          <div class="form-item">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" />
           </div>
+
           <input type="submit" value="Login" />
           
           <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />

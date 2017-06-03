@@ -13,22 +13,21 @@
         <c:url var="headerInjectionUrl" value="/header-injection" />
         
         <form action="${headerInjectionUrl}" method="POST">
-            <div>
-                <label>
-                    Header-Name <textarea name="headerName"></textarea>
-                </label>
+            <div class="inline-form-item">
+                <label for="headerName">Header-Name</label>
+                <textarea id="headerName" name="headerName"></textarea>
             </div>
-            <div>
-                <label>
-                    Header-Value <textarea name="headerValue"></textarea>
-                </label>
+            <div class="inline-form-item">
+                <label for="headerValue">Header-Value</label>
+                <textarea id="headerValue" name="headerValue"></textarea>
             </div>
+            
             <div>
-                <label>
-                    <input type="checkbox" name="removeLineSeparator" value="true" /> 改行コードを明示的に除去する
-                </label>
+                <input type="submit" value="Submit" />
+                
+                <input type="checkbox" id="removeLineSeparator" name="removeLineSeparator" value="true" />
+                <label for="removeLineSeparator">改行コードを明示的に除去する</label>
             </div>
-            <input type="submit" value="Submit" />
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
         </form>
     </body>
