@@ -23,6 +23,7 @@ public class MySpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers(LOGIN_PAGE).permitAll()
                 .antMatchers("/css/**/*.css").permitAll()
+                .antMatchers("/admin.jsp").hasAuthority("admin")
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -47,6 +48,7 @@ public class MySpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("hoge").password("hoge").roles();
+                .withUser("hoge").password("hoge").authorities("user").and()
+                .withUser("admin").password("admin").authorities("admin");
     }
 }
