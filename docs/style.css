@@ -1,0 +1,175 @@
+@charset "UTF-8";
+
+body {
+    background-color: #e6e6e6;
+}
+
+.error {
+    color: #F00;
+}
+
+.info {
+    color: #228b22;
+}
+
+.right {
+    float: right;
+}
+
+.clearBoth {
+    clear: both;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    border-radius: 4px;
+    border-color: #ccc;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    padding: 6px 12px;
+}
+
+input[type="text"],
+input[type="password"] {
+    height: 25px;
+    width: 300px;
+}
+
+textarea {
+    height: 80px;
+    width: 300px;
+    resize: none;
+}
+
+.form-item {
+    margin-bottom: 10px;
+}
+
+.form-item label {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.inline-form-item {
+    display: inline-block;
+}
+
+.inline-form-item label {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="submit"],
+input[type="button"],
+button {
+    font-size: 18px;
+    padding: 8px 15px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+    cursor: pointer;
+
+    border-color: #aaa;
+    background-color: #fff;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
+    background-color: #ddd;
+}
+
+input[type="submit"]:active,
+input[type="button"]:active,
+button:active {
+    background-color: #ccc;
+}
+
+a {
+    text-decoration: none;
+    color: #1605ff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #0c00a7;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #070065;
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+}
+
+.list-item {
+    border-bottom: 1px solid #ccc;
+    padding: 6px 12px;
+    color: #333;
+    font-size: 18px;
+    background-color: #fff;
+}
+
+.list-link {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+}
+
+.list-link:hover {
+    color: #0e55dc;
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+.list-link:active {
+    color: #0c45b1;
+    background-color: #ddd;
+    text-decoration: none;
+}
+
+/*
+li {
+    border-bottom: 1px solid #ccc;
+    padding: 6px 12px;
+    color: #333;
+    font-size: 18px;
+    background-color: #fff;
+}
+
+li a {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 6px 12px;
+    color: #333;
+    font-size: 18px;
+    background-color: #fff;
+}
+
+li a:hover {
+    color: #0e55dc;
+    background-color: #f0f0f0;
+    text-decoration: none;
+}
+
+li a:active {
+    color: #0c45b1;
+    background-color: #ddd;
+    text-decoration: none;
+}
+*/

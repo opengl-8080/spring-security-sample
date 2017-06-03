@@ -3,20 +3,18 @@
     <head>
         <meta charset="UTF-8" />
         <title>CSRF</title>
-        <style>
-            body {
-                background-color: #e6e6e6;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h2>https://localhost:8443/non-secure/csrf</h2>
+        <h2>CSRF</h2>
+        
+        <h3>https://localhost:8443/non-secure/csrf</h3>
         <form action="https://localhost:8443/non-secure/csrf" method="POST">
             <input type="text" name="value" value="CSRF Attack!" />
             <input type="submit" value="Submit" />
         </form>
         
-        <h2>https://localhost:8443/secure/csrf</h2>
+        <h3>https://localhost:8443/secure/csrf</h3>
         <form action="https://localhost:8443/secure/csrf" method="POST">
             <input type="text" name="value" value="CSRF Attack!" />
             <input type="submit" value="Submit" />

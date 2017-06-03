@@ -3,24 +3,23 @@
     <head>
         <meta charset="UTF-8" />
         <title>X-XSS</title>
-        <style>
-            a {
-                display: block;
-                font-size: 18pt;
-                margin-bottom: 20px;
-            }
-            
-            body {
-                background-color: #e6e6e6;
-            }
-        </style>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <a href="https://localhost:8443/non-secure/x-xss?message=&lt;script&gt;alert('X-XSS Attack!!');&lt;/script&gt;">
-            https://localhost:8443/non-secure/x-xss?message=&lt;script&gt;alert('X-XSS Attack!!');&lt;/script&gt;
-        </a>
-        <a href="https://localhost:8443/secure/x-xss?message=&lt;script&gt;alert('X-XSS Attack!!');&lt;/script&gt;">
-            https://localhost:8443/secure/x-xss?message=&lt;script&gt;alert('X-XSS Attack!!');&lt;/script&gt;
-        </a>
+        <h2>X-XSS</h2>
+        <ul>
+            <li>
+                <a class="list-item list-link"
+                   href="https://localhost:8443/non-secure/x-xss?message=&lt;script&gt;alert('X-XSS Attack!!');&lt;/script&gt;">
+                    https://localhost:8443/non-secure/x-xss?message=&lt;script&gt;alert('X-XSS Attack!!');&lt;/script&gt;
+                </a>
+            </li>
+            <li>
+                <a class="list-item list-link"
+                   href="https://localhost:8443/secure/x-xss?message=&lt;script&gt;alert('X-XSS Attack!!');&lt;/script&gt;">
+                    https://localhost:8443/secure/x-xss?message=&lt;script&gt;alert('X-XSS Attack!!');&lt;/script&gt;
+                </a>
+            </li>
+        </ul>
     </body>
 </html>
