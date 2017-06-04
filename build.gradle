@@ -39,3 +39,7 @@ task start(type: Exec) {
 }
 
 start.dependsOn ':non-secure:war', ':secure:war'
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '3.4.1'
+}
