@@ -17,7 +17,7 @@ public class InMemoryUserRepository implements UserRepository {
     InMemoryUserRepository() {
         Map<String, User> map = new HashMap<>();
         
-        map.put("hoge", new User("hoge", "hoge", "user"));
+        map.put("hoge", new User("user", "user", "user"));
         map.put("admin", new User("admin", "admin", "admin"));
 
         this.userMap = Collections.unmodifiableMap(map);

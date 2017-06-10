@@ -48,7 +48,7 @@ public class MySpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("hoge").password("hoge").authorities("user").and()
+                .withUser("user").password("user").authorities("user").and()
                 .withUser("admin").password("admin").authorities("admin");
     }
 }
